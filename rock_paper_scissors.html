@@ -261,24 +261,24 @@
             //const myTimeout = setTimeout(winner, 5000);
             setTimeout(function(winner){ //Oppgave 7 ------------------------------------------------------------------------------------------------
                 winnerDiv.style.display = "block"
+                document.getElementById("computerWins").innerHTML = computerWins //Satt dette inn her slik at telling på vunnet osv ikke kommer før svar blokken
+                document.getElementById("playerWins").innerHTML = playerWins
+                document.getElementById("drawn").innerHTML = drawn
             }, 1000);
             winnerDiv.style.backgroundColor = "#FF1493" // Oppgave 3. endret farge pga det var umulig nesten å se pga den gule bakgrunnen----------
 
 
             counter = counter + 1
-            playerWins = playerWins + 1
-            computerWins = computerWins + 1
-            drawn = drawn + 1
 
              if(winner == "computer"){ //Oppgave 5-------------------------------------------------------------------------------------------------------
                 winnerDiv.innerHTML = "You lost"
-                document.getElementById("computerWins").innerHTML = computerWins
+                computerWins = computerWins + 1
             }else if(winner == "player"){
                 winnerDiv.innerHTML = "You won"
-                document.getElementById("playerWins").innerHTML = playerWins
+                playerWins = playerWins + 1
             }else{
                 winnerDiv.innerHTML = "It's a tie"
-                document.getElementById("drawn").innerHTML = drawn
+                drawn = drawn + 1
             }
             document.getElementById("counter").innerHTML = counter
 
