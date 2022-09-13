@@ -225,49 +225,42 @@
             // This means if players sign beat computer sign, player wins. Lets try:
             //LEGGE TIL GUN I FUNKJSONEN SLIK AT GUN OGSÅ ER SPILLBAR----------------------------------
             
-                function checkWinner(playerSign, computerSign){
+                function checkWinner(){ //Lage en variabel som er tom med playerwinner osv 
+                    let playerWin="";
+                    let computerWin="";
                     if(playerSign === computerSign){
-                        winner = "undecided"
-                        //return undecided??
+                        return undecided
                     }else{
                         if(playerSign === "paper") {
                             if(computerSign === "rock") {
-                                winner = "player"
-                                //return player
+                                
                             }
                             if(computerSign === "scissors") {
-                                winner = "computer"
-                                //return computer 
+         
                             }
                             //Legge til gun
                         }
                         if(playerSign === "rock") {
                             if(computerSign === "scissors") {
-                                winner = "player"
+                                
                             }
                             //Legge til gun 
                             if(computerSign === "paper") {
-                                winner = "computer"
+                                
                             }
                         }
                         if(playerSign === "scissors") {
                             if(computerSign === "rock") {
-                                winner = "computer"
+                                
                             }
                             //Legge til gun
                             if(computerSign === "paper") {
-                                winner = "player"
+                            
                             }
                         }
-                        /*
-                        if(playerSign === "gun"){
-                            if(){
-                                osv..
-                            }
-
-                        }
-                        */
                     }
+                    return playerWin;
+                    return computerWin;
                 }
             /*
             Gmale koden for hvem som vinner, funker
