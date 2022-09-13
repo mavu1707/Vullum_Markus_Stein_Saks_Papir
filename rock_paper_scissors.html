@@ -132,6 +132,7 @@
             <button type="button" onClick="play('rock')" id="rockButton" class="playerChoice"><img src="rock.jpg" alt="Rock" /></button> <!--3. Skrivefeil (playy -> play)-->
             <button type="button" onClick="play('paper')" id="paperButton" class="playerChoice"><img src="paper.jpg" alt="Paper" /></button>
             <button type="button" onClick="play('scissors')" id="scissorsButton" class="playerChoice"><img src="scissors.jpg" alt="Scissors" /></button>
+            <button type="button" onClick="play('gun')" id="gunButton" class="playerChoice"><img src="gun.png" alt="Gun" /></button> 
         </div>
         <div id="selection">
             <!-- HTML element to show player selection -->
@@ -161,7 +162,7 @@
         let computerWins = 0
         let drawn = 0
         //Make available signs available in code as an array
-        const signs = ["rock", "paper", "scissors"]
+        const signs = ["rock", "paper", "scissors"] //Legg til "gun" -----------------------------
         
         //Find all buttons in the document.
         const buttons = document.querySelectorAll(".playerChoice");
@@ -222,23 +223,29 @@
             computer.innerHTML = "Computer selects " + computerSign
             // Ok, now we have to check for rules! Paper beats rock, rock beat scissors, scissors beat paper.
             // This means if players sign beat computer sign, player wins. Lets try:
+            //LEGGE TIL GUN I FUNKJSONEN SLIK AT GUN OGSÅ ER SPILLBAR----------------------------------
             
                 function checkWinner(playerSign, computerSign){
                     if(playerSign === computerSign){
                         winner = "undecided"
+                        //return undecided??
                     }else{
                         if(playerSign === "paper") {
                             if(computerSign === "rock") {
                                 winner = "player"
+                                //return player
                             }
                             if(computerSign === "scissors") {
                                 winner = "computer"
+                                //return computer 
                             }
+                            //Legge til gun
                         }
                         if(playerSign === "rock") {
                             if(computerSign === "scissors") {
                                 winner = "player"
                             }
+                            //Legge til gun 
                             if(computerSign === "paper") {
                                 winner = "computer"
                             }
@@ -247,13 +254,23 @@
                             if(computerSign === "rock") {
                                 winner = "computer"
                             }
+                            //Legge til gun
                             if(computerSign === "paper") {
                                 winner = "player"
                             }
                         }
+                        /*
+                        if(playerSign === "gun"){
+                            if(){
+                                osv..
+                            }
+
+                        }
+                        */
                     }
                 }
             /*
+            Gmale koden for hvem som vinner, funker
             if(playerSign === computerSign){
                 winner = "undecided"
             }else{
