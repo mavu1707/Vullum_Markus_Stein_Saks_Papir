@@ -225,7 +225,7 @@
             // This means if players sign beat computer sign, player wins. Lets try:
             //LEGGE TIL GUN I FUNKJSONEN SLIK AT GUN OGSÅ ER SPILLBAR----------------------------------
             
-                function checkWinner(){ //Lage en variabel som er tom med playerwinner osv 
+                function checkWinner(playerSign, computerSign){ //Lage en variabel som er tom med playerwinner osv 
                     let playerWin="";
                     let computerWin="";
                     if(playerSign === computerSign){
@@ -238,13 +238,11 @@
                             if(computerSign === "scissors") {
          
                             }
-                            //Legge til gun
                         }
                         if(playerSign === "rock") {
                             if(computerSign === "scissors") {
                                 
                             }
-                            //Legge til gun 
                             if(computerSign === "paper") {
                                 
                             }
@@ -253,14 +251,15 @@
                             if(computerSign === "rock") {
                                 
                             }
-                            //Legge til gun
+
                             if(computerSign === "paper") {
                             
                             }
                         }
                     }
-                    return playerWin;
-                    return computerWin;
+
+                    return {playerWin, computerWin}
+                    
                 }
             /*
             Gmale koden for hvem som vinner, funker
