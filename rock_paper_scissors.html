@@ -143,6 +143,7 @@
         <div id="winner">
             <!-- HTML element to show winner -->
         </div>
+        
         <div id="counterBox">
             <div>Number of games played: <span id="counter">0</span></div>
             <div>Number of games won: <span id="playerWins">0</span></div>
@@ -226,46 +227,46 @@
             // This means if players sign beat computer sign, player wins. Lets try:
             //LEGGE TIL GUN I FUNKJSONEN SLIK AT GUN OGSÅ ER SPILLBAR----------------------------------
 
-
-            /*function checkWinner(playerSign, computerSign){
+/*
+            function checkWinner(playerSign, computerSign){
                 if(playerSign === computerSign){
-                    winner = "undecided"
+                    return "it's a tie"
                 }else{
                     if(playerSign === "paper") {
                         if(computerSign === "rock") {
-                            winner = "player"
+                            return "You Win"
                         }
                     if(computerSign === "scissors" || computerSign === "gun") {
-                        winner = "computer"
+                        return "you lost"
                     }
                 }
                     if(playerSign === "rock") {
                         if(computerSign === "scissors" || computerSign === "gun") {
-                            winner = "player"
+                            return "You Win"
                         }
                         if(computerSign === "paper") {
-                            winner = "computer"
+                            return "you lost"
                         }
                     }
                     if(playerSign === "scissors") {
                         if(computerSign === "rock" || computerSign === "gun") {
-                            winner = "computer"
+                            return "you lost"
                         }
                         if(computerSign === "paper") {
-                            winner = "player"
+                            return "You Win"
                         }
                     }
                     if(playerSign === "gun"){
                         if(computerSign === "scissors" || computerSign === "paper"){
-                            winner = "player"
+                            return "You Win"
                         }
                         if(computerSign === "rock"){
-                            winner = "computer"
+                            return "you lost"
                         }
                     }
                 }     
-            }*/
-
+            }
+*/
             //Gmale koden for hvem som vinner, funker
             if(playerSign === computerSign){
                 winner = "undecided"
