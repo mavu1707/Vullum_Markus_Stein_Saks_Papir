@@ -227,8 +227,12 @@
             //LEGGE TIL GUN I FUNKJSONEN SLIK AT GUN OGSÅ ER SPILLBAR----------------------------------
             
                 /*function checkWinner(playerSign, computerSign){ //Lage en variabel som er tom med playerwinner osv 
+                    let playerWinnner="";
+                    let computerWinner ="";
+                    let tie ="";
                         if(playerSign === computerSign){
-                            return "its a tie"
+                            tie = "tie";
+                            return;
                         }else{
                             if(playerSign === "paper") {
                                 if(computerSign === "rock") {
