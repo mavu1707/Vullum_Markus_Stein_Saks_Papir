@@ -132,7 +132,7 @@
             <button type="button" onClick="play('rock')" id="rockButton" class="playerChoice"><img src="rock.jpg" alt="Rock" /></button> <!--3. Skrivefeil (playy -> play)-->
             <button type="button" onClick="play('paper')" id="paperButton" class="playerChoice"><img src="paper.jpg" alt="Paper" /></button>
             <button type="button" onClick="play('scissors')" id="scissorsButton" class="playerChoice"><img src="scissors.jpg" alt="Scissors" /></button>
-            <button type="button" onClick="play('gun')" id="gunButton" class="playerChoice"><img src="gun.png" alt="Gun" /></button> 
+            <!--<button type="button" onclick="checkWinner()" id="gunButton" class="playerChoice"><img src="gun.png" alt="Gun" /></button>-->
         </div>
         <div id="selection">
             <!-- HTML element to show player selection -->
@@ -155,6 +155,7 @@
 
     <script>
         //We'll prepare an empty variable that later will contain the winner
+        //Trenger ikke variablen winner lengere
         let winner = ""
         //And prepare a counter-variable for number of games played:
         let counter = 0
@@ -225,44 +226,42 @@
             // This means if players sign beat computer sign, player wins. Lets try:
             //LEGGE TIL GUN I FUNKJSONEN SLIK AT GUN OGSÅ ER SPILLBAR----------------------------------
             
-                function checkWinner(playerSign, computerSign){ //Lage en variabel som er tom med playerwinner osv 
-                    let playerWin="";
-                    let computerWin="";
-                    if(playerSign === computerSign){
-                        return undecided
-                    }else{
-                        if(playerSign === "paper") {
-                            if(computerSign === "rock") {
-                                
+                /*function checkWinner(playerSign, computerSign){ //Lage en variabel som er tom med playerwinner osv 
+                    let winner = "";
+                        if(playerSign === computerSign){
+                            winner = "undecided"
+                        }else{
+                            if(playerSign === "paper") {
+                                if(computerSign === "rock") {
+                                    winner = "player"
+                                }
+                                if(computerSign === "scissors") {
+                                    winner = "computer"
+                                }
                             }
-                            if(computerSign === "scissors") {
-         
+                            if(playerSign === "rock") {
+                                if(computerSign === "scissors") {
+                                    winner = "player"
+                                }
+                                if(computerSign === "paper") {
+                                    winner = "computer"
+                                }
                             }
-                        }
-                        if(playerSign === "rock") {
-                            if(computerSign === "scissors") {
-                                
-                            }
-                            if(computerSign === "paper") {
-                                
-                            }
-                        }
-                        if(playerSign === "scissors") {
-                            if(computerSign === "rock") {
-                                
-                            }
+                            if(playerSign === "scissors") {
+                                if(computerSign === "rock") {
+                                    winner = "computer"
+                                }
 
-                            if(computerSign === "paper") {
-                            
+                                if(computerSign === "paper") {
+                                    winner = "player"
+                                }
                             }
                         }
-                    }
-
-                    return {playerWin, computerWin}
-                    
+                        return winner}        
                 }
-            /*
-            Gmale koden for hvem som vinner, funker
+            checkWinner();*/
+
+            //Gmale koden for hvem som vinner, funker
             if(playerSign === computerSign){
                 winner = "undecided"
             }else{
@@ -291,23 +290,21 @@
                 }
             }
             }
-            */
+            
             //Now we have checks to set the winner. Let's write it to the website.
             //Now you know the drill: show #winner by display: block and fill it with HTML:
             const winnerDiv = document.getElementById("winner")
             //const myTimeout = setTimeout(winner, 5000);
-            setTimeout(function(winner){ //Oppgave 7 ------------------------------------------------------------------------------------------------
+            setTimeout(function(winner){ //Oppgave 7 
                 winnerDiv.style.display = "block"
-                document.getElementById("computerWins").innerHTML = computerWins //Satt dette inn her slik at telling på vunnet osv ikke kommer før svar blokken
+                document.getElementById("computerWins").innerHTML = computerWins
                 document.getElementById("playerWins").innerHTML = playerWins
                 document.getElementById("drawn").innerHTML = drawn
             }, 1000);
-            winnerDiv.style.backgroundColor = "#FF1493" // Oppgave 3. endret farge pga det var umulig nesten å se pga den gule bakgrunnen----------
-
+            winnerDiv.style.backgroundColor = "#FF1493"
 
             counter = counter + 1
-
-             if(winner == "computer"){ //Oppgave 5-------------------------------------------------------------------------------------------------------
+             if(winner == "computer"){ 
                 winnerDiv.innerHTML = "You lost"
                 computerWins = computerWins + 1
             }else if(winner == "player"){
@@ -318,8 +315,6 @@
                 drawn = drawn + 1
             }
             document.getElementById("counter").innerHTML = counter
-
-
 
             //winnerDiv.innerHTML = "The winner is " + winner
             /* OPPGAVE 2.2: FORKLAR HVA SOM SKJER PÅ LINJE 254
@@ -336,7 +331,6 @@
             //And display the button for playing again:
             document.getElementById("replay").style.display = "block"
         }
-
         //Now, we need to make a function that restarts the game. This means setting all 
         //variables and values back to their initial state, so nothing is selected as we start:
         function restartGame() {
