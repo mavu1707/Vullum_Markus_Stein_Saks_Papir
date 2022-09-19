@@ -156,7 +156,6 @@
 
     <script>
         //We'll prepare an empty variable that later will contain the winner
-        //Trenger ikke variablen winner lengere
         let winner = ""
         //And prepare a counter-variable for number of games played:
         let counter = 0
@@ -321,17 +320,20 @@
             }else{
                 winnerDiv.style.backgroundColor = winner
             }*/
-            //ENdre til kun player
-
+            //Endre til kun player
+            const playerColor = document.getElementById("winner").innerHTML
             counter = counter + 1
              if(winner == "computer"){ 
                 winnerDiv.innerHTML = "You lost"
+                winnerDiv.style.backgroundColor = "#006b5e"
                 computerWins = computerWins + 1
             }else if(winner == "player"){
-                winnerDiv.innerHTML = "You won" //farge
+                winnerDiv.innerHTML = "You won"
+                winnerDiv.style.backgroundColor = "#FFD700"
                 playerWins = playerWins + 1
             }else{
                 winnerDiv.innerHTML = "It's a tie"
+                winnerDiv.style.backgroundColor = "#006b5e"
                 drawn = drawn + 1
             }
             document.getElementById("counter").innerHTML = counter
