@@ -227,7 +227,8 @@
             //LEGGE TIL GUN I FUNKJSONEN SLIK AT GUN OGSÅ ER SPILLBAR----------------------------------
 
 /*
-            function checkWinner(playerSign, computerSign){
+            tester funksjon for winner
+            setTimeout (function checkWinner(playerSign, computerSign){
                 if(playerSign === computerSign){
                     return "it's a tie"
                 }else{
@@ -264,7 +265,7 @@
                         }
                     }
                 }     
-            }
+            }, 1000) //vet jeg kan putte setTimeout funksjonen rundt checkWinner funksjonene()
 */
             //Gmale koden for hvem som vinner, funker
             if(playerSign === computerSign){
@@ -309,6 +310,7 @@
             const winnerDiv = document.getElementById("winner")
 
             //const myTimeout = setTimeout(winner, 5000);
+            //Kan fjerne pga checkWinner funksjonen
             setTimeout(function(winner){ //Oppgave 7 
                 winnerDiv.style.display = "block"
                 document.getElementById("computerWins").innerHTML = computerWins
@@ -316,6 +318,7 @@
                 document.getElementById("drawn").innerHTML = drawn
             }, 1000);
         
+            //Kan sette dette inn i checkWinner funksjonen
             const playerColor = document.getElementById("winner").innerHTML
             counter = counter + 1
              if(winner == "computer"){ 
