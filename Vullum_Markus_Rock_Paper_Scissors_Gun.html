@@ -308,6 +308,7 @@
             //Now we have checks to set the winner. Let's write it to the website.
             //Now you know the drill: show #winner by display: block and fill it with HTML:
             const winnerDiv = document.getElementById("winner")
+
             //const myTimeout = setTimeout(winner, 5000);
             setTimeout(function(winner){ //Oppgave 7 
                 winnerDiv.style.display = "block"
@@ -315,14 +316,19 @@
                 document.getElementById("playerWins").innerHTML = playerWins
                 document.getElementById("drawn").innerHTML = drawn
             }, 1000);
-            winnerDiv.style.backgroundColor = "#FF1493"
+            /*if(winner = "player"){
+                winnerDiv.style.backgroundColor = "#FFD700"
+            }else{
+                winnerDiv.style.backgroundColor = winner
+            }*/
+            //ENdre til kun player
 
             counter = counter + 1
              if(winner == "computer"){ 
                 winnerDiv.innerHTML = "You lost"
                 computerWins = computerWins + 1
             }else if(winner == "player"){
-                winnerDiv.innerHTML = "You won"
+                winnerDiv.innerHTML = "You won" //farge
                 playerWins = playerWins + 1
             }else{
                 winnerDiv.innerHTML = "It's a tie"
