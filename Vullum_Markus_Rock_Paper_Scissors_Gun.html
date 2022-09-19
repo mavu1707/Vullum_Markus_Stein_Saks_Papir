@@ -156,7 +156,7 @@
 
     <script>
         //We'll prepare an empty variable that later will contain the winner
-        let winner = ""
+        let winner = "" //Kan fjerne pga checkWinner
         //And prepare a counter-variable for number of games played:
         let counter = 0
         let playerWins = 0
@@ -228,44 +228,46 @@
 
 /*
             tester funksjon for winner
-            setTimeout (function checkWinner(playerSign, computerSign){
+            function checkWinner(playerSign, computerSign){
+            let winner = ""
                 if(playerSign === computerSign){
-                    return "it's a tie"
+                    winner =  'Tie'
                 }else{
                     if(playerSign === "paper") {
                         if(computerSign === "rock") {
-                            return "You Win"
+                            winner =  'You Win'
                         }
                     if(computerSign === "scissors" || computerSign === "gun") {
-                        return "you lost"
+                        winner =  'You Lost'
                     }
                 }
                     if(playerSign === "rock") {
                         if(computerSign === "scissors" || computerSign === "gun") {
-                            return "You Win"
+                            winner =  'You Win'
                         }
                         if(computerSign === "paper") {
-                            return "you lost"
+                            winner =  'You Lost'
                         }
                     }
                     if(playerSign === "scissors") {
                         if(computerSign === "rock" || computerSign === "gun") {
-                            return "you lost"
+                            winner =  'You Lost'
                         }
                         if(computerSign === "paper") {
-                            return "You Win"
+                            winner =  'You Win'
                         }
                     }
                     if(playerSign === "gun"){
                         if(computerSign === "scissors" || computerSign === "paper"){
-                            return "You Win"
+                            winner =  'You Win'
                         }
                         if(computerSign === "rock"){
-                            return "you lost"
+                            winner =  'You Lost'
                         }
                     }
-                }     
-            }, 1000) //vet jeg kan putte setTimeout funksjonen rundt checkWinner funksjonene()
+                }
+                return winner     
+            } //vet jeg kan putte setTimeout funksjonen rundt checkWinner funksjonene()
 */
             //Gmale koden for hvem som vinner, funker
             if(playerSign === computerSign){
@@ -273,36 +275,36 @@
             }else{
                 if(playerSign === "paper") {
                     if(computerSign === "rock") {
+                            winner = "player"
+                    }
+                    if(computerSign === "scissors" || computerSign === "gun") {
+                        winner = "computer"
+                    }
+                }
+                if(playerSign === "rock") {
+                    if(computerSign === "scissors" || computerSign === "gun") {
                         winner = "player"
                     }
-                if(computerSign === "scissors" || computerSign === "gun") {
-                    winner = "computer"
+                    if(computerSign === "paper") {
+                        winner = "computer"
+                    }
                 }
-            }
-            if(playerSign === "rock") {
-                if(computerSign === "scissors" || computerSign === "gun") {
-                    winner = "player"
+                if(playerSign === "scissors") {
+                    if(computerSign === "rock" || computerSign === "gun") {
+                        winner = "computer"
+                    }
+                    if(computerSign === "paper") {
+                        winner = "player"
+                    }
                 }
-                if(computerSign === "paper") {
-                    winner = "computer"
+                if(playerSign === "gun"){
+                    if(computerSign === "scissors" || computerSign === "paper"){
+                        winner = "player"
+                    }
+                    if(computerSign === "rock"){
+                        winner = "computer"
+                    }
                 }
-            }
-            if(playerSign === "scissors") {
-                if(computerSign === "rock" || computerSign === "gun") {
-                    winner = "computer"
-                }
-                if(computerSign === "paper") {
-                    winner = "player"
-                }
-            }
-            if(playerSign === "gun"){
-                if(computerSign === "scissors" || computerSign === "paper"){
-                    winner = "player"
-                }
-                if(computerSign === "rock"){
-                    winner = "computer"
-                }
-            }
             }
             
             //Now we have checks to set the winner. Let's write it to the website.
