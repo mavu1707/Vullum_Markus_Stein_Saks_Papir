@@ -226,9 +226,9 @@
             // This means if players sign beat computer sign, player wins. Lets try:
             //LEGGE TIL GUN I FUNKJSONEN SLIK AT GUN OGSÅ ER SPILLBAR----------------------------------
 
-/*
-            tester funksjon for winner
 
+            //tester funksjon for winner
+/*
             counter = counter + 1
             setTimeout(function checkWinner(playerSign, computerSign){
             let winner = ""
@@ -237,6 +237,7 @@
                     winnerDiv.style.backgroundColor = "#006b5e"
                     drawn = drawn + 1
                     winner = "Its a Tie"
+                    document.getElementById("drawn").innerHTML = winner
                 }else{
                     if(playerSign === "paper") {
                         if(computerSign === "rock") {
@@ -288,11 +289,16 @@
                     }
                 }
                 winnerDiv.style.display = "block"
+                document.getElementById("computerWins").innerHTML = computerWins
+                document.getElementById("playerWins").innerHTML = playerWins
+                document.getElementById("drawn").innerHTML = drawn
                 return winner
-            } 1000,) //vet jeg kan putte setTimeout funksjonen rundt checkWinner funksjonene()
-document.getElementById("replay").style.display = "block"
-*/
+            }, 1000) //vet jeg kan putte setTimeout funksjonen rundt checkWinner funksjonene()
+            //document.getElementById("replay").style.display = "block"
+            checkWinner();
+            Hvordan sette setTimout rundt funksjonen checkWinner??????
             //Gmale koden for hvem som vinner, funker
+            */
             if(playerSign === computerSign){
                 winner = "undecided"
             }else{
