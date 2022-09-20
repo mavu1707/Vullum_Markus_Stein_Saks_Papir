@@ -236,63 +236,54 @@
                 if(playerSign === computerSign){
                     winnerDiv.style.backgroundColor = "#006b5e"
                     drawn = drawn + 1
-                    winner =  'Tie'
-                    return
+                    winner = "Its a Tie"
                 }else{
                     if(playerSign === "paper") {
                         if(computerSign === "rock") {
                             winnerDiv.style.backgroundColor = "#FFD700"
                             playerWins = playerWins + 1
-                            winner =  'You Win'
-                            return
+                            winner =  "You Win"
                         }
                     if(computerSign === "scissors" || computerSign === "gun") {
                         winnerDiv.style.backgroundColor = "#006b5e"
                         computerWins = computerWins + 1
-                        winner =  'You Lost'
-                        return
+                        winner =  "you lost"
                     }
                 }
                     if(playerSign === "rock") {
                         if(computerSign === "scissors" || computerSign === "gun") {
                             winnerDiv.style.backgroundColor = "#FFD700"
                             playerWins = playerWins + 1
-                            winner =  'You Win'
-                            return
+                            winner =  "you win"
                         }
                         if(computerSign === "paper") {
                             winnerDiv.style.backgroundColor = "#006b5e"
                             computerWins = computerWins + 1
-                            winner =  'You Lost'
-                            return
+                            winner =  "you lost"
                         }
                     }
                     if(playerSign === "scissors") {
                         if(computerSign === "rock" || computerSign === "gun") {
                             winnerDiv.style.backgroundColor = "#006b5e"
                             computerWins = computerWins + 1
-                            winner =  'You Lost'
-                            return
+                            winner =  "you win"
                         }
                         if(computerSign === "paper") {
                             winnerDiv.style.backgroundColor = "#FFD700"
                             playerWins = playerWins + 1
-                            winner =  'You Win'
-                            return
+                            winner =  "you lost"
                         }
                     }
                     if(playerSign === "gun"){
                         if(computerSign === "scissors" || computerSign === "paper"){
                             winnerDiv.style.backgroundColor = "#FFD700"
                             playerWins = playerWins + 1
-                            winner =  'You Win'
-                            return
+                            winner =  "you win"
                         }
                         if(computerSign === "rock"){
                             winnerDiv.style.backgroundColor = "#006b5e"
                             computerWins = computerWins + 1
-                            winner =  'You Lost'
-                            return
+                            winner =  "you lost"
                         }
                     }
                 }
@@ -347,9 +338,9 @@ document.getElementById("replay").style.display = "block"
             //Kan fjerne pga checkWinner funksjonen
             setTimeout(function(winner){ //Oppgave 7 
                 winnerDiv.style.display = "block"
-                /*document.getElementById("computerWins").innerHTML = computerWins
+                document.getElementById("computerWins").innerHTML = computerWins
                 document.getElementById("playerWins").innerHTML = playerWins
-                document.getElementById("drawn").innerHTML = drawn*/
+                document.getElementById("drawn").innerHTML = drawn
             }, 1000);
         
             //Kan sette dette inn i checkWinner funksjonen
