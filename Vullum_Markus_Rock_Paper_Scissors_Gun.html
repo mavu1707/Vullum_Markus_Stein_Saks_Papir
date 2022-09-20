@@ -156,7 +156,7 @@
 
     <script>
         //We'll prepare an empty variable that later will contain the winner
-        let winner = "" //Kan fjerne pga checkWinner
+        //let winner = "" //Kan fjerne pga checkWinner
         //And prepare a counter-variable for number of games played:
         let counter = 0
         let playerWins = 0
@@ -228,54 +228,52 @@
 
 
             //tester funksjon for winner
-/*
+
             function checkWinner(playerSign, computerSign){
             let winner = ""
+            const winnerDiv = document.getElementById("winner")
                 if(playerSign === computerSign){
-                    winner = "Its a Tie"
+                    winner = "It's a tie!"
+                    console.log(playerSign, computerSign)
                 }else{
                     if(playerSign === "paper") {
                         if(computerSign === "rock") {
-                            winner =  "You Win"
+                            winner =  "You Win!"
                         }
-                    if(computerSign === "scissors" || computerSign === "gun") {
-                        winner =  "you lost"
+                        if(computerSign === "scissors" || computerSign === "gun") {
+                        winner =  "You Lost!"
+                        }
                     }
-                }
                     if(playerSign === "rock") {
                         if(computerSign === "scissors" || computerSign === "gun") {
-                            winner =  "you win"
+                            winner =  "You Win!"
                         }
                         if(computerSign === "paper") {
-                            winner =  "you lost"
+                            winner =  "You Lost!"
                         }
                     }
                     if(playerSign === "scissors") {
                         if(computerSign === "rock" || computerSign === "gun") {
-                            winner =  "you win"
+                            winner =  "You Lost!"
                         }
                         if(computerSign === "paper") {
-                            winner =  "you lost"
+                            winner =  "You Win!"
                         }
                     }
                     if(playerSign === "gun"){
                         if(computerSign === "scissors" || computerSign === "paper"){
-                            winner =  "you win"
+                            winner =  "You Win!"
                         }
                         if(computerSign === "rock"){
-                            winner =  "you lost"
+                            winner =  "You Lost!"
                         }
                     }
                 }
-                return winner
+                document.getElementById("winner").innerHTML = winner
             }
-
-            
-            //vet jeg kan putte setTimeout funksjonen rundt checkWinner funksjonene()
-            //Hvordan sette setTimout rundt funksjonen checkWinner???
-            //Denne funksjonen skal gkøre alt, skrive ut og sjekke
+            //checkWinner(playerSign, computerSign);
             //Gmale koden for hvem som vinner, funker
-            */
+            /*
             if(playerSign === computerSign){
                 winner = "undecided"
             }else{
@@ -312,14 +310,13 @@
                     }
                 }
             }
-            
+            */
             //Now we have checks to set the winner. Let's write it to the website.
             //Now you know the drill: show #winner by display: block and fill it with HTML:
             const winnerDiv = document.getElementById("winner")
 
-            //const myTimeout = setTimeout(winner, 5000);
-            //Kan fjerne pga checkWinner funksjonen
             setTimeout(function(winner){ //Oppgave 7 
+                checkWinner(playerSign, computerSign)
                 winnerDiv.style.display = "block"
                 document.getElementById("computerWins").innerHTML = computerWins
                 document.getElementById("playerWins").innerHTML = playerWins
@@ -329,15 +326,15 @@
             //Kan sette dette inn i checkWinner funksjonen
             counter = counter + 1
              if(winner == "computer"){ 
-                winnerDiv.innerHTML = "You lost"
+                checkWinner(playerSign, computerSign)
                 winnerDiv.style.backgroundColor = "#006b5e"
                 computerWins = computerWins + 1
             }else if(winner == "player"){
-                winnerDiv.innerHTML = "You won"
+                checkWinner(playerSign, computerSign)
                 winnerDiv.style.backgroundColor = "#FFD700"
                 playerWins = playerWins + 1
             }else{
-                winnerDiv.innerHTML = "It's a tie"
+                checkWinner(playerSign, computerSign)
                 winnerDiv.style.backgroundColor = "#006b5e"
                 drawn = drawn + 1
             }
