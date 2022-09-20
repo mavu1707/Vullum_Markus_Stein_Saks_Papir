@@ -229,40 +229,46 @@
             counter = counter + 1
             function checkWinner(playerSign, computerSign){
             let winner = ""
-            const winnerDiv = document.getElementById("winner")
+            const playerWin = document.getElementById("playerWins")
                 if(playerSign === computerSign){
                     winner = "It's a tie"
                     drawn = drawn + 1
-                    console.log(playerSign, computerSign)
+                    document.getElementById("winner").style.backgroundColor = "#006b5e"
                 }else{
                     if(playerSign === "paper") {
                         if(computerSign === "rock") {
                             winner =  "You Win"
                             playerWins = playerWins + 1
+                            document.getElementById("winner").style.backgroundColor = "#FFD700"
                         }
                         if(computerSign === "scissors" || computerSign === "gun") {
                         winner =  "You lose"
                         computerWins = computerWins + 1
+                        document.getElementById("winner").style.backgroundColor = "#006b5e"
                         }
                     }
                     if(playerSign === "rock") {
                         if(computerSign === "scissors" || computerSign === "gun") {
                             winner =  "You Win"
                             playerWins = playerWins + 1
+                            document.getElementById("winner").style.backgroundColor = "#FFD700"
                         }
                         if(computerSign === "paper") {
                             winner =  "You lose"
                             computerWins = computerWins + 1
+                            document.getElementById("winner").style.backgroundColor = "#006b5e"
                         }
                     }
                     if(playerSign === "scissors") {
                         if(computerSign === "rock" || computerSign === "gun") {
                             winner =  "You lose"
                             computerWins = computerWins + 1
+                            document.getElementById("winner").style.backgroundColor = "#006b5e"
                         }
                         if(computerSign === "paper") {
                             winner =  "You Win"
                             playerWins = playerWins + 1
+                            document.getElementById("winner").style.backgroundColor = "#FFD700"
                         }
                     }
                     if(playerSign === "gun"){
@@ -273,10 +279,12 @@
                         if(computerSign === "rock"){
                             winner =  "You lose"
                             computerWins = computerWins + 1
+                            document.getElementById("winner").style.backgroundColor = "#006b5e"
                         }
                     }
                 }
                 document.getElementById("winner").innerHTML = winner
+                
             }
             document.getElementById("counter").innerHTML = counter
             //Now we have checks to set the winner. Let's write it to the website.
