@@ -233,39 +233,39 @@
             let winner = ""
             const winnerDiv = document.getElementById("winner")
                 if(playerSign === computerSign){
-                    winner = "It's a tie!"
+                    winner = "undecided"
                     console.log(playerSign, computerSign)
                 }else{
                     if(playerSign === "paper") {
                         if(computerSign === "rock") {
-                            winner =  "You Win!"
+                            winner =  "player"
                         }
                         if(computerSign === "scissors" || computerSign === "gun") {
-                        winner =  "You Lost!"
+                        winner =  "computer"
                         }
                     }
                     if(playerSign === "rock") {
                         if(computerSign === "scissors" || computerSign === "gun") {
-                            winner =  "You Win!"
+                            winner =  "player"
                         }
                         if(computerSign === "paper") {
-                            winner =  "You Lost!"
+                            winner =  "computer"
                         }
                     }
                     if(playerSign === "scissors") {
                         if(computerSign === "rock" || computerSign === "gun") {
-                            winner =  "You Lost!"
+                            winner =  "computer"
                         }
                         if(computerSign === "paper") {
-                            winner =  "You Win!"
+                            winner =  "player"
                         }
                     }
                     if(playerSign === "gun"){
                         if(computerSign === "scissors" || computerSign === "paper"){
-                            winner =  "You Win!"
+                            winner =  "player"
                         }
                         if(computerSign === "rock"){
-                            winner =  "You Lost!"
+                            winner =  "computer"
                         }
                     }
                 }
