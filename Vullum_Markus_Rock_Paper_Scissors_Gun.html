@@ -229,74 +229,51 @@
 
             //tester funksjon for winner
 /*
-            counter = counter + 1
-            setTimeout(function checkWinner(playerSign, computerSign){
+            function checkWinner(playerSign, computerSign){
             let winner = ""
-            const winnerDiv = document.getElementById("winner")
                 if(playerSign === computerSign){
-                    winnerDiv.style.backgroundColor = "#006b5e"
-                    drawn = drawn + 1
                     winner = "Its a Tie"
-                    document.getElementById("drawn").innerHTML = winner
                 }else{
                     if(playerSign === "paper") {
                         if(computerSign === "rock") {
-                            winnerDiv.style.backgroundColor = "#FFD700"
-                            playerWins = playerWins + 1
                             winner =  "You Win"
                         }
                     if(computerSign === "scissors" || computerSign === "gun") {
-                        winnerDiv.style.backgroundColor = "#006b5e"
-                        computerWins = computerWins + 1
                         winner =  "you lost"
                     }
                 }
                     if(playerSign === "rock") {
                         if(computerSign === "scissors" || computerSign === "gun") {
-                            winnerDiv.style.backgroundColor = "#FFD700"
-                            playerWins = playerWins + 1
                             winner =  "you win"
                         }
                         if(computerSign === "paper") {
-                            winnerDiv.style.backgroundColor = "#006b5e"
-                            computerWins = computerWins + 1
                             winner =  "you lost"
                         }
                     }
                     if(playerSign === "scissors") {
                         if(computerSign === "rock" || computerSign === "gun") {
-                            winnerDiv.style.backgroundColor = "#006b5e"
-                            computerWins = computerWins + 1
                             winner =  "you win"
                         }
                         if(computerSign === "paper") {
-                            winnerDiv.style.backgroundColor = "#FFD700"
-                            playerWins = playerWins + 1
                             winner =  "you lost"
                         }
                     }
                     if(playerSign === "gun"){
                         if(computerSign === "scissors" || computerSign === "paper"){
-                            winnerDiv.style.backgroundColor = "#FFD700"
-                            playerWins = playerWins + 1
                             winner =  "you win"
                         }
                         if(computerSign === "rock"){
-                            winnerDiv.style.backgroundColor = "#006b5e"
-                            computerWins = computerWins + 1
                             winner =  "you lost"
                         }
                     }
                 }
-                winnerDiv.style.display = "block"
-                document.getElementById("computerWins").innerHTML = computerWins
-                document.getElementById("playerWins").innerHTML = playerWins
-                document.getElementById("drawn").innerHTML = drawn
                 return winner
-            }, 1000) //vet jeg kan putte setTimeout funksjonen rundt checkWinner funksjonene()
-            //document.getElementById("replay").style.display = "block"
-            checkWinner();
-            Hvordan sette setTimout rundt funksjonen checkWinner??????
+            }
+
+            
+            //vet jeg kan putte setTimeout funksjonen rundt checkWinner funksjonene()
+            //Hvordan sette setTimout rundt funksjonen checkWinner???
+            //Denne funksjonen skal gkøre alt, skrive ut og sjekke
             //Gmale koden for hvem som vinner, funker
             */
             if(playerSign === computerSign){
