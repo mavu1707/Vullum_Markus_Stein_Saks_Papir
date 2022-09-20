@@ -226,96 +226,64 @@
             // This means if players sign beat computer sign, player wins. Lets try:
             //LEGGE TIL GUN I FUNKJSONEN SLIK AT GUN OGSÅ ER SPILLBAR----------------------------------
 
-
-            //tester funksjon for winner
-
+            counter = counter + 1
             function checkWinner(playerSign, computerSign){
             let winner = ""
             const winnerDiv = document.getElementById("winner")
                 if(playerSign === computerSign){
-                    winner = "undecided"
+                    winner = "It's a tie"
+                    drawn = drawn + 1
                     console.log(playerSign, computerSign)
                 }else{
                     if(playerSign === "paper") {
                         if(computerSign === "rock") {
-                            winner =  "player"
+                            winner =  "You Win"
+                            playerWins = playerWins + 1
                         }
                         if(computerSign === "scissors" || computerSign === "gun") {
-                        winner =  "computer"
+                        winner =  "You lose"
+                        computerWins = computerWins + 1
                         }
                     }
                     if(playerSign === "rock") {
                         if(computerSign === "scissors" || computerSign === "gun") {
-                            winner =  "player"
+                            winner =  "You Win"
+                            playerWins = playerWins + 1
                         }
                         if(computerSign === "paper") {
-                            winner =  "computer"
+                            winner =  "You lose"
+                            computerWins = computerWins + 1
                         }
                     }
                     if(playerSign === "scissors") {
                         if(computerSign === "rock" || computerSign === "gun") {
-                            winner =  "computer"
+                            winner =  "You lose"
+                            computerWins = computerWins + 1
                         }
                         if(computerSign === "paper") {
-                            winner =  "player"
+                            winner =  "You Win"
+                            playerWins = playerWins + 1
                         }
                     }
                     if(playerSign === "gun"){
                         if(computerSign === "scissors" || computerSign === "paper"){
-                            winner =  "player"
+                            winner =  "You Win"
+                            playerWins = playerWins + 1
                         }
                         if(computerSign === "rock"){
-                            winner =  "computer"
+                            winner =  "You lose"
+                            computerWins = computerWins + 1
                         }
                     }
                 }
                 document.getElementById("winner").innerHTML = winner
             }
-            //checkWinner(playerSign, computerSign);
-            //Gmale koden for hvem som vinner, funker
-            /*
-            if(playerSign === computerSign){
-                winner = "undecided"
-            }else{
-                if(playerSign === "paper") {
-                    if(computerSign === "rock") {
-                            winner = "player"
-                    }
-                    if(computerSign === "scissors" || computerSign === "gun") {
-                        winner = "computer"
-                    }
-                }
-                if(playerSign === "rock") {
-                    if(computerSign === "scissors" || computerSign === "gun") {
-                        winner = "player"
-                    }
-                    if(computerSign === "paper") {
-                        winner = "computer"
-                    }
-                }
-                if(playerSign === "scissors") {
-                    if(computerSign === "rock" || computerSign === "gun") {
-                        winner = "computer"
-                    }
-                    if(computerSign === "paper") {
-                        winner = "player"
-                    }
-                }
-                if(playerSign === "gun"){
-                    if(computerSign === "scissors" || computerSign === "paper"){
-                        winner = "player"
-                    }
-                    if(computerSign === "rock"){
-                        winner = "computer"
-                    }
-                }
-            }
-            */
+            document.getElementById("counter").innerHTML = counter
             //Now we have checks to set the winner. Let's write it to the website.
             //Now you know the drill: show #winner by display: block and fill it with HTML:
             const winnerDiv = document.getElementById("winner")
 
-            setTimeout(function(winner){ //Oppgave 7 
+            setTimeout(function(winner){
                 checkWinner(playerSign, computerSign)
                 winnerDiv.style.display = "block"
                 document.getElementById("computerWins").innerHTML = computerWins
@@ -323,23 +291,6 @@
                 document.getElementById("drawn").innerHTML = drawn
             }, 1000);
         
-            //Kan sette dette inn i checkWinner funksjonen
-            counter = counter + 1
-             if(winner == "computer"){ 
-                checkWinner(playerSign, computerSign)
-                winnerDiv.style.backgroundColor = "#006b5e"
-                computerWins = computerWins + 1
-            }else if(winner == "player"){
-                checkWinner(playerSign, computerSign)
-                winnerDiv.style.backgroundColor = "#FFD700"
-                playerWins = playerWins + 1
-            }else{
-                checkWinner(playerSign, computerSign)
-                winnerDiv.style.backgroundColor = "#006b5e"
-                drawn = drawn + 1
-            }
-            document.getElementById("counter").innerHTML = counter
-
             //winnerDiv.innerHTML = "The winner is " + winner
             /* OPPGAVE 2.2: FORKLAR HVA SOM SKJER PÅ LINJE 254
              * _ditt svar her_ 
@@ -351,7 +302,6 @@
              * _ditt svar her_ 
              Denne henter ut elemntet counter og skriver det ut til html på siden, hver gang vi spiller +1 blir lagt ut til counter
              */
-
             //And display the button for playing again:
             document.getElementById("replay").style.display = "block"
         }
